@@ -132,13 +132,20 @@
             padding: 12px 14px;
             font-size: 32px;
             font-weight: 700;
-            color: #e7c468;
             text-align: center;
             letter-spacing: 2px;
-            text-shadow: 0 0 8px rgba(230, 180, 60, 0.6);
+            text-shadow: 0 0 8px rgba(0, 180, 255, 0.4);
             box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
             word-break: break-all;
             margin: 0;
+        }
+
+        #propertyValue {
+            color: #87CEEB;
+        }
+
+        #propertyValue2 {
+            color: #FFB6C1;
         }
 
         .footer-module {
@@ -214,7 +221,7 @@
                 <span class="indicator">▼</span>
             </p>
             <section id="valueBox" class="stat-content">
-                <p class="stat-display" id="propertyValue">word</p>
+                <p class="stat-display" id="propertyValue"></p>
             </section>
         </section>
 
@@ -224,7 +231,7 @@
                 <span class="indicator">▼</span>
             </p>
             <section id="valueBox2" class="stat-content">
-                <p class="stat-display" id="propertyValue2">mzenmz，knmfkn，杏豆，彰冬，类司类，捏类捏，实遥实</p>
+                <p class="stat-display" id="propertyValue2"></p>
             </section>
         </section>
     </section>
@@ -243,7 +250,7 @@
 </div>
 
 <script>
-    (function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const trigger = document.getElementById('propertyTrigger');
         const label = document.getElementById('triggerLabel');
         const valueBox = document.getElementById('valueBox');
@@ -252,6 +259,8 @@
         const collapsedText = '点击此处查看属性';
         const expandedText = '点击此处收回文本';
         const statValue = 'pjsk，scp，backrooms，锈湖，战地，正当防卫，cities skylines，星露谷，欧卡2，喵斯，战地\n有玩过米家三游戏，三角洲，第五人格';
+
+        valueEl.textContent = statValue;
 
         let open = false;
 
@@ -281,9 +290,9 @@
         });
 
         setState(false);
-    })();
+    });
 
-    (function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const trigger2 = document.getElementById('trigger2');
         const label2 = document.getElementById('label2');
         const valueBox2 = document.getElementById('valueBox2');
@@ -292,6 +301,8 @@
         const collapsedText2 = '点击此处查看属性';
         const expandedText2 = '点击此处收回文本';
         const statValue2 = 'mzenmz，knmfkn，杏豆，彰冬，类司类，捏类捏，实遥实';
+
+        valueEl2.textContent = statValue2;
 
         let open2 = false;
 
@@ -321,7 +332,7 @@
         });
 
         setState2(false);
-    })();
+    });
 </script>
 </body>
 </html>
