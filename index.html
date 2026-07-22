@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>esahhk</title>
+    <style>
+        :root {
+            --bg-body: #0f0f0f;
+            --text-body: #eee;
+            --color-primary: #1e90ff;
+            --color-hover: #00ffff;
+            --bg-header: linear-gradient(135deg, #111 0%, #222 100%);
+            --bg-section: #1a1a1a;
+            --bg-nav-footer: #111;
+            --text-footer: #888;
+            --color-disabled: gray;
+            --shadow-section: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-body);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            background-color: var(--bg-section);
+            margin: 20px 0;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: var(--shadow-section);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: var(--color-primary);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.8;
+            white-space: pre-wrap;
+        }
+
+        iframe {
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow-section);
+            max-width: 100%;
+        }
+
+        .stat-section {
+            background: var(--bg-section);
+            border: 2px solid #3a4150;
+            border-radius: 6px;
+            padding: 14px 20px;
+            box-shadow: 0 0 14px rgba(0, 180, 255, 0.15), inset 0 1px 3px rgba(0,0,0,0.8);
+            transition: border-color 0.2s;
+            margin: 16px 0;
+            animation: none;
+            opacity: 1;
+            transform: none;
+        }
+
+        .stat-section:hover {
+            border-color: #5b7cae;
+        }
+
+        .stat-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            color: var(--text-body);
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-shadow: 0 1px 2px black;
+            margin: 0;
+        }
+
+        .label-text {
+            font-size: 15px;
+            color: var(--text-body);
+        }
+
+        .indicator {
+            font-size: 18px;
+            transition: transform 0.25s ease;
+            color: var(--color-primary);
+        }
+
+        .expanded .indicator {
+            transform: rotate(180deg);
+            color: var(--color-hover);
+        }
+
+        .stat-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, margin-top 0.25s;
+            margin-top: 0;
+            padding: 0;
+        }
+
+        .stat-content.open {
+            max-height: 500px;
+            margin-top: 12px;
+        }
+
+        .stat-display {
+            background: #0a0c10;
+            border: 1px solid #2f3a4c;
+            border-radius: 4px;
+            padding: 12px 14px;
+            font-size: 32px;
+            font-weight: 700;
+            color: #e7c468;
+            text-align: center;
+            letter-spacing: 2px;
+            text-shadow: 0 0 8px rgba(230, 180, 60, 0.6);
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
+            word-break: break-all;
+            margin: 0;
+        }
+
+        .footer-module {
+            animation: none;
+            opacity: 1;
+            transform: none;
+            text-align: center;
+        }
+
+        .jump-button {
+            display: inline-block;
+            background: var(--bg-section);
+            color: var(--text-body);
+            border: 2px solid #3a4150;
+            padding: 12px 32px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            box-shadow: 0 0 10px rgba(0, 180, 255, 0.1);
+        }
+
+        .jump-button:hover {
+            border-color: var(--color-primary);
+            color: #fff;
+            background: #2a2d35;
+            box-shadow: 0 0 16px rgba(0, 180, 255, 0.3);
+        }
+
+        .footer-info {
+            animation: none;
+            opacity: 1;
+            transform: none;
+            background: var(--bg-nav-footer);
+            text-align: center;
+            padding: 18px;
+            border-radius: 10px;
+            margin-top: 20px;
+            border: 1px solid #2a2d35;
+        }
+
+        .footer-info p {
+            margin: 5px 0;
+            color: var(--text-footer);
+            font-size: 14px;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <section>
+        <p>以下是文本与跳转主页面，qq：639554885</p>
+    </section>
+
+    <section>
+        <p>
+            欢迎你进行了物理交互！使用nfc标签到达本页的请直接跳转，扫描二维码到达本页的请观看下面的几段文本，谢谢w
+
+
+            感谢收物，收货请拍摄拆袋视频，以便售后。谢谢www
+
+
+            感谢扩列，扩列可以查看下方属性，有qq可以加，谢谢www
+        </p>
+
+        <section class="stat-section">
+            <p id="propertyTrigger" class="stat-header" role="button" tabindex="0" aria-expanded="false">
+                <span id="triggerLabel" class="label-text">点击此处查看属性</span>
+                <span class="indicator">▼</span>
+            </p>
+            <section id="valueBox" class="stat-content">
+                <p class="stat-display" id="propertyValue">word</p>
+            </section>
+        </section>
+
+        <section class="stat-section">
+            <p id="trigger2" class="stat-header" role="button" tabindex="0" aria-expanded="false">
+                <span id="label2" class="label-text">点击此处查看属性</span>
+                <span class="indicator">▼</span>
+            </p>
+            <section id="valueBox2" class="stat-content">
+                <p class="stat-display" id="propertyValue2">mzenmz，knmfkn，杏豆，彰冬，类司类，捏类捏，实遥实</p>
+            </section>
+        </section>
+    </section>
+
+    <section class="footer-module">
+        <a href="https://esahhk.xyz" class="jump-button">跳转到主页面</a>
+    </section>
+
+    <section class="footer-info">
+        <p>esahhk</p>
+        <p>2026</p>
+        <p>邮箱：esahhk@outlook.com</p>
+        <p>QQ：639554885</p>
+    </section>
+
+</div>
+
+<script>
+    (function() {
+        const trigger = document.getElementById('propertyTrigger');
+        const label = document.getElementById('triggerLabel');
+        const valueBox = document.getElementById('valueBox');
+        const valueEl = document.getElementById('propertyValue');
+
+        const collapsedText = '点击此处查看属性';
+        const expandedText = '点击此处收回文本';
+        const statValue = 'pjsk，scp，backrooms，锈湖，战地，正当防卫，cities skylines，星露谷，欧卡2，喵斯，战地\n有玩过米家三游戏，三角洲，第五人格';
+
+        let open = false;
+
+        function setState(expanded) {
+            open = expanded;
+            label.textContent = expanded ? expandedText : collapsedText;
+            if (expanded) {
+                valueBox.classList.add('open');
+                trigger.classList.add('expanded');
+            } else {
+                valueBox.classList.remove('open');
+                trigger.classList.remove('expanded');
+            }
+            trigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        }
+
+        function toggle() {
+            setState(!open);
+        }
+
+        trigger.addEventListener('click', toggle);
+        trigger.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+            }
+        });
+
+        setState(false);
+    })();
+
+    (function() {
+        const trigger2 = document.getElementById('trigger2');
+        const label2 = document.getElementById('label2');
+        const valueBox2 = document.getElementById('valueBox2');
+        const valueEl2 = document.getElementById('propertyValue2');
+
+        const collapsedText2 = '点击此处查看属性';
+        const expandedText2 = '点击此处收回文本';
+        const statValue2 = 'mzenmz，knmfkn，杏豆，彰冬，类司类，捏类捏，实遥实';
+
+        let open2 = false;
+
+        function setState2(expanded) {
+            open2 = expanded;
+            label2.textContent = expanded ? expandedText2 : collapsedText2;
+            if (expanded) {
+                valueBox2.classList.add('open');
+                trigger2.classList.add('expanded');
+            } else {
+                valueBox2.classList.remove('open');
+                trigger2.classList.remove('expanded');
+            }
+            trigger2.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        }
+
+        function toggle2() {
+            setState2(!open2);
+        }
+
+        trigger2.addEventListener('click', toggle2);
+        trigger2.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle2();
+            }
+        });
+
+        setState2(false);
+    })();
+</script>
+</body>
+</html>
